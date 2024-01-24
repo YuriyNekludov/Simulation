@@ -1,6 +1,6 @@
-package Entitys.StaticObjects;
+package entitys.static_objects;
 
-import Entitys.Entity;
+import entitys.Entity;
 
 public class Tree extends Entity {
     public Tree() {

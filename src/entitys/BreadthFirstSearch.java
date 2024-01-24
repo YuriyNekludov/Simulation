@@ -1,7 +1,7 @@
-package Entitys;
+package entitys;
 
-import Entitys.Creatures.Creature;
-import GameMap.*;
+import entitys.creatures.Creature;
+import game_map.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,10 +15,8 @@ public class BreadthFirstSearch {
     public List<Coordinates> breadthFS(GameMap gameMap, Creature searcher, Class<? extends Entity> required) {
         Queue<Coordinates> queue = new LinkedList<>();
         Map<Coordinates, Coordinates> comeFrom = new HashMap<>();
-        Map<Coordinates, Integer> stepValue = new HashMap<>();
         queue.add(searcher.getCoordinates());
         comeFrom.put(searcher.getCoordinates(), null);
-        stepValue.put(searcher.getCoordinates(), 0);
         Coordinates target = null;
         while (!queue.isEmpty()) {
             Coordinates count = queue.poll();
@@ -27,24 +25,13 @@ public class BreadthFirstSearch {
                 break;
             }
             for (Coordinates next : getNeighbors(count)) {
-                int step = stepValue.get(count) + 1;
                 if (checkValidCoordinates(gameMap, next, required) && !comeFrom.containsKey(next)) {
                     queue.add(next);
                     comeFrom.put(next, count);
-                    stepValue.put(next, step);
                 }
             }
         }
         List<Coordinates> path = new LinkedList<>();
-        if (target == null) {
-            for (Map.Entry<Coordinates, Integer> entry : stepValue.entrySet()) {
-                if (entry.getValue() == searcher.getStamina()) {
-                    path.add(entry.getKey());
-                    break;
-                }
-            }
-            return path;
-        }
         Coordinates temp = target;
         while(temp != null) {
             path.addFirst(temp);
@@ -69,9 +56,5 @@ public class BreadthFirstSearch {
                 coordinates.getY() >= 0 && coordinates.getY() <= gameMap.getHeight() &&
                 (gameMap.getMap().get(coordinates) == null ||
                         gameMap.getMap().get(coordinates).getClass().equals(required));
-    }
-
-    private int heuristic(Coordinates start, Coordinates next) {
-        return Math.abs(start.getX() - next.getX()) + Math.abs(start.getY() - next.getY());
     }
 }

@@ -1,12 +1,12 @@
-package Actions;
+package actions;
 
 
-import Entitys.Creatures.Herbivore;
-import Entitys.Creatures.Predator;
-import Entitys.Entity;
-import Entitys.StaticObjects.Grass;
-import Entitys.StaticObjects.Rock;
-import Entitys.StaticObjects.Tree;
+import entitys.creatures.Herbivore;
+import entitys.creatures.Predator;
+import entitys.Entity;
+import entitys.static_objects.Grass;
+import entitys.static_objects.Rock;
+import entitys.static_objects.Tree;
 
 public abstract class Action {
     protected static final int CREATURE_COUNT = 12;

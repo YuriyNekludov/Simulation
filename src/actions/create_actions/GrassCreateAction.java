@@ -1,7 +1,7 @@
-package Actions.CreateActions;
+package actions.create_actions;
 
-import Entitys.StaticObjects.Grass;
-import GameMap.GameMap;
+import entitys.static_objects.Grass;
+import game_map.GameMap;
 
 public class GrassCreateAction extends CreateAction {
     @Override

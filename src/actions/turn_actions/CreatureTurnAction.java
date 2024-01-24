@@ -1,10 +1,10 @@
-package Actions.TurnActions;
+package actions.turn_actions;
 
-import Entitys.Creatures.Creature;
-import Entitys.Creatures.Herbivore;
-import Entitys.Creatures.Predator;
-import Entitys.Entity;
-import GameMap.*;
+import entitys.creatures.Creature;
+import entitys.creatures.Herbivore;
+import entitys.creatures.Predator;
+import entitys.Entity;
+import game_map.*;
 
 import java.util.ArrayList;
 import java.util.List;

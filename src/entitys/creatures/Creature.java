@@ -1,8 +1,8 @@
-package Entitys.Creatures;
+package entitys.creatures;
 
-import Entitys.BreadthFirstSearch;
-import Entitys.Entity;
-import GameMap.*;
+import entitys.BreadthFirstSearch;
+import entitys.Entity;
+import game_map.*;
 
 import java.util.List;
 import java.util.Random;
@@ -44,12 +44,6 @@ public abstract class Creature extends Entity {
     public abstract void makeMove(GameMap gameMap);
 
     protected boolean conditionOfDeath(GameMap gameMap, List<Coordinates> path) {
-        if (path.size() == 1) {
-            satiety--;
-            if (satiety == 0)
-                gameMap.getMap().remove(coordinates);
-            return true;
-        }
         if (path.size() - 1 < stamina)
             return false;
         if (gameMap.getMap().get(path.get(stamina)) == null) {

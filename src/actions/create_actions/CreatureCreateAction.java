@@ -1,8 +1,8 @@
-package Actions.CreateActions;
+package actions.create_actions;
 
-import Entitys.Creatures.Herbivore;
-import Entitys.Creatures.Predator;
-import GameMap.GameMap;
+import entitys.creatures.Herbivore;
+import entitys.creatures.Predator;
+import game_map.GameMap;
 
 public class CreatureCreateAction extends CreateAction {
     @Override

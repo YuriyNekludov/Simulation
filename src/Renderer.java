@@ -1,4 +1,4 @@
-import GameMap.*;
+import game_map.*;
 
 public class Renderer {
     public void renderGameMap(GameMap gameMap) {

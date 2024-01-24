@@ -1,6 +1,6 @@
-package GameMap;
+package game_map;
 
-import Entitys.Entity;
+import entitys.Entity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,13 +30,10 @@ public class GameMap {
     }
 
     public void addEntity(Entity entity) {
-        while (true) {
+        do {
             setEntityCoordinates(entity);
-            if (map.get(entity.getCoordinates()) != null)
-                continue;
-            map.put(entity.getCoordinates(), entity);
-            break;
-        }
+        } while (map.containsKey(entity.getCoordinates()));
+        map.put(entity.getCoordinates(), entity);
     }
 
     public void moveEntity(Entity entity, Coordinates coordinates) {

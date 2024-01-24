@@ -1,9 +1,9 @@
-package Actions.TurnActions;
+package actions.turn_actions;
 
-import Actions.Action;
-import Entitys.Entity;
-import Entitys.StaticObjects.Grass;
-import GameMap.*;
+import actions.Action;
+import entitys.Entity;
+import entitys.static_objects.Grass;
+import game_map.*;
 
 import java.util.Map;
 

@@ -1,8 +1,8 @@
-package Actions.CreateActions;
+package actions.create_actions;
 
-import Entitys.StaticObjects.Rock;
-import Entitys.StaticObjects.Tree;
-import GameMap.GameMap;
+import entitys.static_objects.Rock;
+import entitys.static_objects.Tree;
+import game_map.GameMap;
 
 public class StaticObjectsCreateAction extends CreateAction {
     @Override

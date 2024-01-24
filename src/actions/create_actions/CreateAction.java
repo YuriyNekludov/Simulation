@@ -1,10 +1,8 @@
-package Actions.CreateActions;
+package actions.create_actions;
 
-import Actions.Action;
-import Entitys.Creatures.Herbivore;
-import Entitys.Creatures.Predator;
-import Entitys.Entity;
-import GameMap.GameMap;
+import actions.Action;
+import entitys.Entity;
+import game_map.GameMap;
 
 public abstract class CreateAction extends Action {
     public abstract void createEntities(GameMap gameMap);

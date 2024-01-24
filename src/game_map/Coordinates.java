@@ -1,4 +1,4 @@
-package GameMap;
+package game_map;
 
 public class Coordinates {
     private int x;

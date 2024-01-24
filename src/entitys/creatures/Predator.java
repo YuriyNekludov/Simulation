@@ -1,7 +1,7 @@
-package Entitys.Creatures;
+package entitys.creatures;
 
-import Entitys.Entity;
-import GameMap.*;
+import entitys.Entity;
+import game_map.*;
 
 import java.util.List;
 
@@ -35,11 +35,6 @@ public class Predator extends Creature {
             return;
         }
         if (conditionOfDeath(gameMap, path)) {
-            if (path.size() == 1) {
-                Coordinates target = path.getLast();
-                gameMap.moveEntity(this, target);
-                return;
-            }
             Coordinates target = path.get(stamina);
             gameMap.moveEntity(this, target);
         } else {

@@ -1,10 +1,10 @@
-import Actions.CreateActions.CreateAction;
-import Actions.CreateActions.CreatureCreateAction;
-import Actions.CreateActions.GrassCreateAction;
-import Actions.CreateActions.StaticObjectsCreateAction;
-import Actions.TurnActions.CreatureTurnAction;
-import Actions.TurnActions.TurnAction;
-import GameMap.GameMap;
+import actions.create_actions.CreateAction;
+import actions.create_actions.CreatureCreateAction;
+import actions.create_actions.GrassCreateAction;
+import actions.create_actions.StaticObjectsCreateAction;
+import actions.turn_actions.CreatureTurnAction;
+import actions.turn_actions.TurnAction;
+import game_map.GameMap;
 
 public class Simulation extends Thread {
     private static GameMap gameMap;
@@ -30,6 +30,8 @@ public class Simulation extends Thread {
             try {
                 Thread.sleep(1500);
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                isStarted = false;
                 System.out.println(e);
             }
         }

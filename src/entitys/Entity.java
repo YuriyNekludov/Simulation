@@ -1,6 +1,6 @@
-package Entitys;
+package entitys;
 
-import GameMap.Coordinates;
+import game_map.Coordinates;
 
 public abstract class Entity {
     protected String design;

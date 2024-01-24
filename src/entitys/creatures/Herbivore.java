@@ -1,8 +1,8 @@
-package Entitys.Creatures;
+package entitys.creatures;
 
-import Entitys.Entity;
-import Entitys.StaticObjects.Grass;
-import GameMap.*;
+import entitys.Entity;
+import entitys.static_objects.Grass;
+import game_map.*;
 
 import java.util.List;
 
@@ -32,11 +32,6 @@ public class Herbivore extends Creature {
             return;
         }
         if (conditionOfDeath(gameMap, path)) {
-            if (path.size() == 1) {
-                Coordinates target = path.getLast();
-                gameMap.moveEntity(this, target);
-                return;
-            }
             Coordinates target = path.get(stamina);
             gameMap.moveEntity(this, target);
         } else {
