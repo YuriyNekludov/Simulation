@@ -20,7 +20,7 @@ public class BreadthFirstSearch {
         Coordinates target = null;
         while (!queue.isEmpty()) {
             Coordinates count = queue.poll();
-            if (gameMap.getMap().get(count) != null && gameMap.getMap().get(count).getClass().equals(required)) {
+            if (isTarget(gameMap, count, required)) {
                 target = count;
                 break;
             }
@@ -56,5 +56,10 @@ public class BreadthFirstSearch {
                 coordinates.getY() >= 0 && coordinates.getY() <= gameMap.getHeight() &&
                 (gameMap.getMap().get(coordinates) == null ||
                         gameMap.getMap().get(coordinates).getClass().equals(required));
+    }
+
+    private boolean isTarget(GameMap gameMap, Coordinates coordinates, Class<? extends Entity> required) {
+        return gameMap.getMap().get(coordinates) != null &&
+                gameMap.getMap().get(coordinates).getClass().equals(required);
     }
 }

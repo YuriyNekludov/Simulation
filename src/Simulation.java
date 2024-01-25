@@ -7,15 +7,15 @@ import actions.turn_actions.TurnAction;
 import game_map.GameMap;
 
 public class Simulation extends Thread {
-    private static GameMap gameMap;
+    private GameMap gameMap;
     private int turnCount;
     private CreateAction[] initActions;
-    private static TurnAction turnAction;
-    private static Renderer renderer;
-    private static boolean isStarted;
+    private TurnAction turnAction;
+    private Renderer renderer;
+    private boolean isStarted;
 
     public Simulation() {
-        gameMap = new GameMap();
+        gameMap = new GameMap(13, 13);
         initActions = new CreateAction[]{new CreatureCreateAction(),
                 new GrassCreateAction(), new StaticObjectsCreateAction()};
         turnAction = new CreatureTurnAction();

@@ -11,10 +11,10 @@ public class GameMap {
     private final int height;
     private Map<Coordinates, Entity> map;
 
-    public GameMap() {
+    public GameMap(int width, int height) {
         map = new HashMap<>();
-        width = 15;
-        height = 15;
+        this.width = width;
+        this.height = height;
     }
 
     public int getWidth() {
